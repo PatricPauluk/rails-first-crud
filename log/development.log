@@ -1,0 +1,212 @@
+Started GET "/" for ::1 at 2024-09-19 20:10:10 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateProdutos (20240919231155)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "produtos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "descricao" text, "preco" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20240919231155_create_produtos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240919231155"]]
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-19 23:12:57.552217"], ["updated_at", "2024-09-19 23:12:57.552217"]]
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2024-09-19 20:13:40 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/patric/.asdf/installs/ruby/2.7.8/lib/ruby/gems/2.7.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos" for ::1 at 2024-09-19 20:13:47 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 483ms (Views: 475.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/produtos/new" for ::1 at 2024-09-19 20:13:52 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/_form.html.erb (10.4ms)
+  Rendered produtos/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 41ms (Views: 21.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/produtos" for ::1 at 2024-09-19 20:14:08 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G4F9YCFzJaeubh5cF+Xx9A3GwU3glN90+jrAAC2jTUTJ0qyEVWOx9IEmlPte+b6gjBpEtLdte3EwpNBzKNdjZA==", "produto"=>{"nome"=>"Presunto", "descricao"=>"Sadia", "preco"=>"29,00"}, "commit"=>"Create Produto"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[36mProduto Create (0.2ms)[0m  [1m[32mINSERT INTO "produtos" ("nome", "descricao", "preco", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Presunto"], ["descricao", "Sadia"], ["preco", 29.0], ["created_at", "2024-09-19 23:14:08.010068"], ["updated_at", "2024-09-19 23:14:08.010068"]]
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/produtos_controller.rb:27
+Redirected to http://localhost:3000/produtos/1
+Completed 302 Found in 6ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/produtos/1" for ::1 at 2024-09-19 20:14:08 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduto Load (0.1ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:63
+  Rendering produtos/show.html.erb within layouts/application
+  Rendered produtos/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos" for ::1 at 2024-09-19 20:14:12 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/produtos/new" for ::1 at 2024-09-19 20:14:14 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/_form.html.erb (1.7ms)
+  Rendered produtos/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/produtos" for ::1 at 2024-09-19 20:14:33 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pZ+hnyeWP6c18g20ngEz3AL6B/aoadWRJ5SrjKIcuC53zHB7U4ar9Bq6hxPXHXyIgyaCD/+QcZTtCrv/p2iWDg==", "produto"=>{"nome"=>"Queijo", "descricao"=>"Frimesa", "preco"=>"39,90"}, "commit"=>"Create Produto"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[36mProduto Create (0.2ms)[0m  [1m[32mINSERT INTO "produtos" ("nome", "descricao", "preco", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Queijo"], ["descricao", "Frimesa"], ["preco", 39.0], ["created_at", "2024-09-19 23:14:33.387893"], ["updated_at", "2024-09-19 23:14:33.387893"]]
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/produtos_controller.rb:27
+Redirected to http://localhost:3000/produtos/2
+Completed 302 Found in 6ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/produtos/2" for ::1 at 2024-09-19 20:14:33 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduto Load (0.1ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:63
+  Rendering produtos/show.html.erb within layouts/application
+  Rendered produtos/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos" for ::1 at 2024-09-19 20:14:37 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.1ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos/new" for ::1 at 2024-09-19 20:14:39 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/_form.html.erb (5.7ms)
+  Rendered produtos/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/produtos" for ::1 at 2024-09-19 20:15:29 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BGipti0wGVylc9VeeGOVsKK9FSYvVZlJljzMqkGe3ADWO3hSWSCND4o7X/kxf9rkI2GQ33isPUxcotzZROryIA==", "produto"=>{"nome"=>"Pão de Forma", "descricao"=>"Pacote", "preco"=>"5,99"}, "commit"=>"Create Produto"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[36mProduto Create (0.2ms)[0m  [1m[32mINSERT INTO "produtos" ("nome", "descricao", "preco", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Pão de Forma"], ["descricao", "Pacote"], ["preco", 5.0], ["created_at", "2024-09-19 23:15:29.392279"], ["updated_at", "2024-09-19 23:15:29.392279"]]
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/produtos_controller.rb:27
+Redirected to http://localhost:3000/produtos/3
+Completed 302 Found in 6ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/produtos/3" for ::1 at 2024-09-19 20:15:29 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduto Load (0.1ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:63
+  Rendering produtos/show.html.erb within layouts/application
+  Rendered produtos/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos" for ::1 at 2024-09-19 20:15:33 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.1ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos/new" for ::1 at 2024-09-19 20:15:37 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/_form.html.erb (1.7ms)
+  Rendered produtos/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/produtos" for ::1 at 2024-09-19 20:15:53 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OH7/x7W7/XZgy2Kk11Dt5uNEt8pxYjhSC3mXOQM08hPqLS4jwatpJU+D6AOeTKKyYpgyMyabnFfB54dKBkDcMw==", "produto"=>{"nome"=>"Requeijão", "descricao"=>"Pote 200gr", "preco"=>"5,90"}, "commit"=>"Create Produto"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[36mProduto Create (0.2ms)[0m  [1m[32mINSERT INTO "produtos" ("nome", "descricao", "preco", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Requeijão"], ["descricao", "Pote 200gr"], ["preco", 5.0], ["created_at", "2024-09-19 23:15:53.155049"], ["updated_at", "2024-09-19 23:15:53.155049"]]
+  ↳ app/controllers/produtos_controller.rb:27
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/produtos_controller.rb:27
+Redirected to http://localhost:3000/produtos/4
+Completed 302 Found in 7ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/produtos/4" for ::1 at 2024-09-19 20:15:53 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduto Load (0.1ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:63
+  Rendering produtos/show.html.erb within layouts/application
+  Rendered produtos/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/produtos" for ::1 at 2024-09-19 20:15:54 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos"[0m
+  ↳ app/views/produtos/index.html.erb:16
+  Rendered produtos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.4ms)
+
+
