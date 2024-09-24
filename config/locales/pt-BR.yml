@@ -1,0 +1,13 @@
+# config/locales/pt-BR.yml
+pt-BR:
+  helpers:
+    submit:
+      create: Criar
+      update: Atualizar
+      submit: Enviar
+    actions:
+      show: Exibir
+      edit: Editar
+      destroy: Excluir
+      confirm: Tem certeza?
+      back: Voltar
